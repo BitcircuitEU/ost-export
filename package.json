@@ -1,0 +1,35 @@
+{
+  "name": "ost-to-pst",
+  "version": "1.0.0",
+  "main": "dist/outlook-converter.js",
+  "scripts": {
+    "start": "ts-node src/outlook-converter.ts",
+    "build": "tsc",
+    "package": "npm run build && pkg .",
+    "dev": "ts-node-dev --respawn src/outlook-converter.ts",
+    "read": "ts-node src/index.ts"
+  },
+  "bin": {
+    "ost-to-pst": "./dist/outlook-converter.js"
+  },
+  "pkg": {
+    "targets": [ "node18-win-x64" ],
+    "outputPath": "dist",
+    "assets": [
+      "node_modules/**/*"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "OST to PST file converter using Outlook automation",
+  "dependencies": {
+    "@types/node": "^22.13.4",
+    "pst-extractor": "^1.11.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  }
+}
